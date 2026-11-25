@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Multimedia Transformation and Processing</title>
+<meta name="description" content="A student-authored learning hub on how digital multimedia is represented, transformed and processed efficiently, in six connected sections.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230b6b88'/%3E%3Cg fill='%23fff'%3E%3Ccircle cx='4' cy='4' r='1.3'/%3E%3Ccircle cx='8' cy='4' r='1.3'/%3E%3Ccircle cx='12' cy='4' r='1.3'/%3E%3Ccircle cx='4' cy='8' r='1.3'/%3E%3Ccircle cx='8' cy='8' r='1.3'/%3E%3Ccircle cx='12' cy='8' r='1.3'/%3E%3Ccircle cx='4' cy='12' r='1.3'/%3E%3Ccircle cx='8' cy='12' r='1.3'/%3E%3Ccircle cx='12' cy='12' r='1.3'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap"><a class="brand" href="index.html"><span class="tag">T3</span><span class="brand-name">Transformation &amp; Processing</span></a><nav class="nav" aria-label="Site"><a href="index.html" class="text-link" aria-current="page"><span class="lbl">Home</span></a><a href="s1-representation.html" title="Section 1 · Digital Multimedia Representation"><span class="n">1</span><span class="lbl">Representation</span></a><a href="s2-resizing.html" title="Section 2 · Image Resizing and Interpolation"><span class="n">2</span><span class="lbl">Resizing</span></a><a href="s3-geometric.html" title="Section 3 · Geometric Image Transformations"><span class="n">3</span><span class="lbl">Geometric</span></a><a href="s4-frequency.html" title="Section 4 · Frequency-Domain Transformations"><span class="n">4</span><span class="lbl">Frequency</span></a><a href="s5-color.html" title="Section 5 · Color-Space Transformations"><span class="n">5</span><span class="lbl">Color</span></a><a href="s6-efficient.html" title="Section 6 · Efficient Multimedia Processing"><span class="n">6</span><span class="lbl">Efficient</span></a><a href="resources.html" class="text-link"><span class="lbl">Resources</span></a><a href="team.html" class="text-link"><span class="lbl">Team</span></a></nav></div></header>
+<main id="main">
+<section class="hero">
+<div class="wrap">
+<p class="eyebrow">Topic #3 · Introduction to Multimedia Communications</p>
+<h1>Multimedia Transformation and Processing</h1>
+<p class="lead">How is digital multimedia represented, transformed and processed efficiently? This student-authored learning hub answers that question in six connected sections. Each one has its own explanation, diagram, comparison table, real applications and annotated resources.</p>
+<div class="meta"><span>Group <b><span data-group>15</span></b></span><span><b>6</b> sections</span><span><b>43</b> annotated resources</span><span><b>54</b> sources in the library</span><span>Sources and links checked 25 Nov 2026</span></div>
+<div class="actions"><a class="btn primary" href="s1-representation.html">Start with Section 1 →</a><a class="btn ghost" href="resources.html">Open the resource library</a></div>
+</div>
+</section>
+
+<div class="wrap home">
+<section class="block" id="home-goals">
+<h2>What you will be able to do</h2>
+<ul class="objectives">
+<li>Explain how sampling, quantization, resolution and bit depth turn continuous light and sound into data.</li>
+<li>Choose an interpolation kernel, geometric transform, frequency transform or colour space for a task, and justify the choice.</li>
+<li>Find the standards and papers behind these techniques, and judge which sources to trust.</li>
+<li>Use comparison tables and diagrams to reason about quality, cost and trade-offs.</li>
+<li>Connect the six topics into one efficient processing pipeline, from capture to display.</li>
+</ul>
+</section>
+
+<section class="block" id="home-map">
+<h2>Learning map</h2>
+<p class="muted" style="max-width: var(--measure)">Section 1 is the foundation. Sections 2 to 5 each transform the data in a different way, and Section 6 asks how to do all of it fast. Select a box to open that section; the lettered arrows are explained below.</p>
+<figure class="fig">
+<div class="fig-scroll"><svg class="dia" id="fig-map" viewBox="0 0 880 404" role="img" aria-labelledby="fig-map-title fig-map-desc" xmlns="http://www.w3.org/2000/svg"><title id="fig-map-title">Six-section learning map</title><desc id="fig-map-desc">Section 1 (representation) feeds the four transformation sections 2 to 5; sections 2, 3 and 4 feed section 6 (efficient processing). Lettered arrows are explained in the list below the map.</desc><defs><marker id="fig-map-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="f-ink"/></marker><marker id="fig-map-ah-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="f-acc"/></marker><marker id="fig-map-ah-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="f-warm"/></marker></defs><path d="M330.0,92.0 C330.0,125.0 113.0,125.0 113.0,156.0" class="acc" marker-end="url(#fig-map-ah-acc)"/><circle cx="221.5" cy="125.0" r="10.0" class="badge"/><text x="221.5" y="129.0" class="t-badge" text-anchor="middle">a</text><path d="M440.0,92.0 C440.0,125.0 549.0,125.0 549.0,156.0" class="acc" marker-end="url(#fig-map-ah-acc)"/><circle cx="494.5" cy="125.0" r="10.0" class="badge"/><text x="494.5" y="129.0" class="t-badge" text-anchor="middle">b</text><path d="M550.0,92.0 C550.0,125.0 767.0,125.0 767.0,156.0" class="acc" marker-end="url(#fig-map-ah-acc)"/><circle cx="658.5" cy="125.0" r="10.0" class="badge"/><text x="658.5" y="129.0" class="t-badge" text-anchor="middle">c</text><path d="M113.0,250.0 C113.0,281.0 330.0,281.0 330.0,310.0" class="acc" marker-end="url(#fig-map-ah-acc)"/><circle cx="221.5" cy="281.0" r="10.0" class="badge"/><text x="221.5" y="285.0" class="t-badge" text-anchor="middle">e</text><path d="M331.0,250.0 C331.0,281.0 440.0,281.0 440.0,310.0" class="acc" marker-end="url(#fig-map-ah-acc)"/><circle cx="385.5" cy="281.0" r="10.0" class="badge"/><text x="385.5" y="285.0" class="t-badge" text-anchor="middle">f</text><path d="M549.0,250.0 C549.0,281.0 550.0,281.0 550.0,310.0" class="acc" marker-end="url(#fig-map-ah-acc)"/><circle cx="549.5" cy="281.0" r="10.0" class="badge"/><text x="549.5" y="285.0" class="t-badge" text-anchor="middle">g</text><line x1="206.0" y1="204.0" x2="237.0" y2="204.0" class="acc" marker-end="url(#fig-map-ah-acc)"/><circle cx="222.0" cy="186.0" r="10.0" class="badge"/><text x="222.0" y="190.0" class="t-badge" text-anchor="middle">d</text><line x1="674.0" y1="204.0" x2="643.0" y2="204.0" class="acc" marker-end="url(#fig-map-ah-acc)"/><circle cx="658.0" cy="186.0" r="10.0" class="badge"/><text x="658.0" y="190.0" class="t-badge" text-anchor="middle">h</text><a href="s1-representation.html" class="map-node"><rect x="290.0" y="18.0" width="300.0" height="74.0" rx="10" class="box node"/><circle cx="312.0" cy="42.0" r="13.0" class="f-acc"/><text x="312.0" y="47.0" class="t-num" text-anchor="middle">1</text><text x="334.0" y="48.0" class="t-b" text-anchor="start">Digital Multimedia Representation</text><text x="334.0" y="72.0" class="t-s" text-anchor="start">sampling · quantization · bit depth</text></a><a href="s2-resizing.html" class="map-node"><rect x="22.0" y="158.0" width="182.0" height="92.0" rx="10" class="box node"/><circle cx="44.0" cy="182.0" r="13.0" class="f-acc"/><text x="44.0" y="187.0" class="t-num" text-anchor="middle">2</text><text x="66.0" y="186.0" class="t-b" text-anchor="start">Image Resizing</text><text x="66.0" y="204.0" class="t-b" text-anchor="start">and Interpolation</text><text x="36.0" y="234.0" class="t-s" text-anchor="start">kernels · aliasing</text></a><a href="s3-geometric.html" class="map-node"><rect x="240.0" y="158.0" width="182.0" height="92.0" rx="10" class="box node"/><circle cx="262.0" cy="182.0" r="13.0" class="f-acc"/><text x="262.0" y="187.0" class="t-num" text-anchor="middle">3</text><text x="284.0" y="186.0" class="t-b" text-anchor="start">Geometric Image</text><text x="284.0" y="204.0" class="t-b" text-anchor="start">Transformations</text><text x="254.0" y="234.0" class="t-s" text-anchor="start">matrices · inverse mapping</text></a><a href="s4-frequency.html" class="map-node"><rect x="458.0" y="158.0" width="182.0" height="92.0" rx="10" class="box node"/><circle cx="480.0" cy="182.0" r="13.0" class="f-acc"/><text x="480.0" y="187.0" class="t-num" text-anchor="middle">4</text><text x="502.0" y="186.0" class="t-b" text-anchor="start">Frequency-Domain</text><text x="502.0" y="204.0" class="t-b" text-anchor="start">Transformations</text><text x="472.0" y="234.0" class="t-s" text-anchor="start">DFT · DCT · DWT</text></a><a href="s5-color.html" class="map-node"><rect x="676.0" y="158.0" width="182.0" height="92.0" rx="10" class="box node"/><circle cx="698.0" cy="182.0" r="13.0" class="f-acc"/><text x="698.0" y="187.0" class="t-num" text-anchor="middle">5</text><text x="720.0" y="186.0" class="t-b" text-anchor="start">Color-Space</text><text x="720.0" y="204.0" class="t-b" text-anchor="start">Transformations</text><text x="690.0" y="234.0" class="t-s" text-anchor="start">RGB · HSV · Y′CbCr</text></a><a href="s6-efficient.html" class="map-node"><rect x="290.0" y="312.0" width="300.0" height="74.0" rx="10" class="box node"/><circle cx="312.0" cy="336.0" r="13.0" class="f-acc"/><text x="312.0" y="341.0" class="t-num" text-anchor="middle">6</text><text x="334.0" y="342.0" class="t-b" text-anchor="start">Efficient Multimedia Processing</text><text x="334.0" y="366.0" class="t-s" text-anchor="start">algorithms · memory · CPU / GPU</text></a></svg></div>
+</figure>
+<ul class="legend">
+<li><span class="l">a</span><span><b>1 → 2.</b> Resizing changes the sampling grid; aliasing explains why shrinking needs filtering.</span></li>
+<li><span class="l">b</span><span><b>1 → 4.</b> The sampling rate limits which frequencies a signal can contain.</span></li>
+<li><span class="l">c</span><span><b>1 → 5.</b> A colour space defines what each stored channel value means.</span></li>
+<li><span class="l">d</span><span><b>2 → 3.</b> Every warp lands between pixels, so geometric transforms reuse interpolation kernels.</span></li>
+<li><span class="l">e</span><span><b>2 → 6.</b> Kernel width and output resolution set the cost per pixel.</span></li>
+<li><span class="l">f</span><span><b>3 → 6.</b> Inverse mapping computes each pixel independently, which suits parallel hardware.</span></li>
+<li><span class="l">g</span><span><b>4 → 6.</b> The FFT makes large filters cheap, so transform choice is algorithm choice.</span></li>
+<li><span class="l">h</span><span><b>5 → 4.</b> JPEG converts to Y′CbCr and subsamples chroma before the DCT.</span></li>
+</ul>
+</section>
+
+<section class="block" id="home-sections">
+<h2>The six sections</h2>
+<div class="cards">
+<a class="card" href="s1-representation.html"><span class="num">Section 1</span><h3>Digital Multimedia Representation</h3><p>Sampling, quantization, resolution and bit depth: how light and sound become numbers, and what each parameter costs.</p><span class="by">Page owner <b><span class="who" data-sid="1123708">簡語辰</span></b> · 1123708</span></a>
+<a class="card" href="s2-resizing.html"><span class="num">Section 2</span><h3>Image Resizing and Interpolation</h3><p>Nearest, bilinear, bicubic and Lanczos kernels; why enlarging cannot add detail and shrinking needs anti-aliasing.</p><span class="by">Page owner <b><span class="who" data-sid="1123709">簡丞逸</span></b> · 1123709</span></a>
+<a class="card" href="s3-geometric.html"><span class="num">Section 3</span><h3>Geometric Image Transformations</h3><p>From translation to homography as 3 × 3 matrices; inverse mapping and resampling; document, panorama and medical cases.</p><span class="by">Page owner <b><span class="who" data-sid="1110426">洪郁琇</span></b> · 1110426</span></a>
+<a class="card" href="s4-frequency.html"><span class="num">Section 4</span><h3>Frequency-Domain Transformations</h3><p>The DFT, DCT and DWT compared, and why JPEG, JPEG 2000 and fast filtering work in the frequency domain.</p><span class="by">Page owner <b><span class="who" data-sid="1123721">許亦禎</span></b> · 1123721</span></a>
+<a class="card" href="s5-color.html"><span class="num">Section 5</span><h3>Color-Space Transformations</h3><p>RGB, grayscale, HSV and Y′CbCr; conversion formulas, studio versus full range, and chroma subsampling.</p><span class="by">Page owner <b><span class="who" data-sid="1143724">蕭偉恩</span></b> · 1143724</span></a>
+<a class="card" href="s6-efficient.html"><span class="num">Section 6</span><h3>Efficient Multimedia Processing</h3><p>Algorithm choice, resolution, memory access and CPU or GPU in end-to-end pipelines, with documented cases.</p><span class="by">Page owner <b><span class="who" data-sid="1083750">黃微恩</span></b> · 1083750</span></a>
+</div>
+</section>
+
+<section class="block" id="home-paths">
+<h2>Suggested reading paths</h2>
+<div class="paths">
+<p class="path"><b>New to the topic</b><span class="steps"><a href="s1-representation.html">1</a> → <a href="s2-resizing.html">2</a> → <a href="s3-geometric.html">3</a> → <a href="s6-efficient.html">6</a></span><span class="muted small">from pixels to warps to speed</span></p>
+<p class="path"><b>Interested in compression</b><span class="steps"><a href="s1-representation.html">1</a> → <a href="s5-color.html">5</a> → <a href="s4-frequency.html">4</a> → <a href="s6-efficient.html">6</a></span><span class="muted small">the order in which JPEG processes a photo</span></p>
+<p class="path"><b>Building a camera or video app</b><span class="steps"><a href="s1-representation.html">1</a> → <a href="s5-color.html">5</a> → <a href="s2-resizing.html">2</a> → <a href="s3-geometric.html">3</a> → <a href="s6-efficient.html">6</a></span><span class="muted small">the stages of Figure 6</span></p>
+</div>
+</section>
+
+<section class="block" id="home-members">
+<h2>Group members</h2>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th scope="col">Section</th><th scope="col">Page</th><th scope="col">Page owner</th><th scope="col">Student ID</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><a href="s1-representation.html">Digital Multimedia Representation</a></td><td><span class="who" data-sid="1123708">簡語辰</span></td><td class="mono">1123708</td></tr>
+<tr><td>2</td><td><a href="s2-resizing.html">Image Resizing and Interpolation</a></td><td><span class="who" data-sid="1123709">簡丞逸</span></td><td class="mono">1123709</td></tr>
+<tr><td>3</td><td><a href="s3-geometric.html">Geometric Image Transformations</a></td><td><span class="who" data-sid="1110426">洪郁琇</span></td><td class="mono">1110426</td></tr>
+<tr><td>4</td><td><a href="s4-frequency.html">Frequency-Domain Transformations</a></td><td><span class="who" data-sid="1123721">許亦禎</span></td><td class="mono">1123721</td></tr>
+<tr><td>5</td><td><a href="s5-color.html">Color-Space Transformations</a></td><td><span class="who" data-sid="1143724">蕭偉恩</span></td><td class="mono">1143724</td></tr>
+<tr><td>6</td><td><a href="s6-efficient.html">Efficient Multimedia Processing</a></td><td><span class="who" data-sid="1083750">黃微恩</span></td><td class="mono">1083750</td></tr>
+</tbody>
+</table>
+</div>
+<p class="muted small">Who did what, peer review and AI use: <a href="team.html">Team and contributions</a>. Every cited source, grouped by type: <a href="resources.html">Resource library</a>.</p>
+</section>
+</div>
+</main>
+<footer class="footer"><div class="wrap"><span>Topic #3 · Multimedia Transformation and Processing</span><span>Group <span data-group>15</span> · Introduction to Multimedia Communications</span><span>Sources and links checked 25 Nov 2026</span><a href="team.html">Team, contributions and AI use</a></div></footer>
+</body>
+</html>
